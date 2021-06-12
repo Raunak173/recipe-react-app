@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "./recipe.module.css";
 
-function Recipe({ title, calories, image, ingredients, cuisineType}) {
+function Recipe({ title, calories, image, ingredients, cuisineType, healthLabels}) {
     return (
         <div className={style.recipe}>
             <h1>{title}</h1>
@@ -13,6 +13,14 @@ function Recipe({ title, calories, image, ingredients, cuisineType}) {
                 {
                     ingredients.map(ingredient => (
                         <li>{ingredient.text}</li>
+                    ))
+                }
+            </ol>
+            <h4>Health Labels:</h4>
+            <ol>
+                {
+                    healthLabels.map(label=>(
+                        <li>{label}</li>
                     ))
                 }
             </ol>
